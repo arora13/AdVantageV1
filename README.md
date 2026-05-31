@@ -2,7 +2,11 @@
 
 **Marketing team at your fingertips.**
 
-Built for the [NEAR AI Agents That Act Hackathon](https://github.com/arora13/AdVantageV1).
+Built for the [NEAR AI Agents That Act Hackathon](https://github.com/arora13/AdVantageV1) — **1st place, online contestant track**.
+
+## Mission
+
+Most small businesses and solo founders can't afford a marketing team — so they guess. AdVantage changes that. Powered by a multi-agent swarm, AdVantage gives any business instant access to a professional-grade marketing team on demand. Describe your product and your audience, and AdVantage's specialized agents handle everything — market research, brand strategy, content creation, campaign planning, and competitor analysis — delivering in minutes what an agency would charge thousands for and take weeks to produce.
 
 ## Demo video
 
