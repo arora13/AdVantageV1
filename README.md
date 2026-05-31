@@ -30,49 +30,13 @@ Works for **local businesses** (cafes, studios, retail, parking lots) and **SaaS
 
 | Agent | Role | What it does |
 |-------|------|----------------|
-| **CMO** | Claude | 30-day GTM plan, ICP, channel mix (TokenRouter or Anthropic) |
+| **CMO** | Claude | 30-day GTM plan, ICP, channel mix |
 | **Lead Hunter** | Apify + Claude | Up to 10 targeted contacts with live web signals when Apify is configured |
 | **Content Engine** | Claude | Instagram, HN, X, email — matched to your business type |
 | **Asset Builder** | Claude + Daytona | React/Tailwind landing page; Daytona verifies code in a sandbox |
 | **Deploy Orchestrator** | In-app | Stages launch pack in memory for your dashboard |
 
 Agents run **sequentially** with live stream lines polled from the server — not a fake progress animation.
-
----
-
-## Quick start
-
-```bash
-git clone https://github.com/arora13/AdVantageV1.git
-cd AdVantageV1
-npm install
-cp .env.example .env   # optional — see below
-npm run dev
-```
-
-Open **http://localhost:8080** (or the port Vite prints).
-
-### Environment variables
-
-**No keys required** — template mode runs in memory with domain-aware output.
-
-| Variable | Purpose |
-|----------|---------|
-| `ANTHROPIC_API_KEY` | TokenRouter key (`sk-…`) **or** direct Claude (`sk-ant-…`) |
-| `TOKENROUTER_API_KEY` | Optional alias for TokenRouter |
-| `TOKENROUTER_BASE_URL` | Default `https://api.tokenrouter.com/v1` |
-| `TOKENROUTER_MODEL` | Default `anthropic/claude-opus-4.7` |
-| `APIFY_API_TOKEN` | Lead Hunter — live Google/social search |
-| `DAYTONA_API_KEY` | Asset Builder — sandbox verify for landing pages |
-| `DAYTONA_API_URL` | Default `https://app.daytona.io/api` |
-| `DAYTONA_TARGET` | Default `us` |
-
-Restart the dev server after editing `.env`.
-
-```bash
-npm run check:ai        # Claude / TokenRouter
-npm run test:sponsors   # Apify + Daytona smoke test
-```
 
 ---
 
@@ -95,7 +59,7 @@ npm test                 # full suite
 npm run test:e2e         # orchestrator swarm
 npm run test:api         # /api/launch/* routes
 npm run test:verticals   # cafe + SaaS + local service
-npm run check:ai         # TokenRouter / Anthropic smoke test
+npm run check:ai         # AI smoke test
 npm run test:sponsors    # Apify + Daytona
 ```
 
@@ -105,7 +69,7 @@ npm run test:sponsors    # Apify + Daytona
 
 - **Frontend:** TanStack Start, React, Tailwind  
 - **API:** JSON routes (`/api/launch/start`, `/progress`, `/result`, `/approve`, `/ai-status`)  
-- **AI:** Claude via TokenRouter or Anthropic direct  
+- **AI:** Claude  
 - **Sponsors:** Apify (leads), Daytona (asset verify)  
 - **Runtime:** In-memory launches (no external DB required)
 
@@ -117,7 +81,6 @@ Only integrations with API keys in `.env` are used at runtime (shown on the land
 
 | Integration | Env var | Agent |
 |-------------|---------|-------|
-| Claude (TokenRouter) | `ANTHROPIC_API_KEY` or `TOKENROUTER_API_KEY` | All AI agents |
 | Apify | `APIFY_API_TOKEN` | Lead Hunter |
 | Daytona | `DAYTONA_API_KEY` | Asset Builder |
 
@@ -130,23 +93,9 @@ src/
   components/launch/     # hero, form, marketing-dashboard
   lib/gtm/               # agent swarm, AI, sponsors (Apify, Daytona)
   lib/ai-config.server.ts
-  lib/tokenrouter.server.ts
   routes/                # /, /analyze, /dashboard
 scripts/                 # E2E tests, check:ai, test:sponsors
 ```
-
----
-
-## Hackathon pitch
-
-Most “AI marketing” tools generate generic copy. AdVantage **acts**:
-
-- Classifies your business (local vs SaaS vs service)  
-- Runs a **multi-agent pipeline** with observable steps  
-- Outputs **actionable contacts** — not fake LinkedIn profiles  
-- Gives you a **dashboard** to approve posts and copy assets before you publish  
-
-**One sentence in → complete GTM pack out.**
 
 ---
 
