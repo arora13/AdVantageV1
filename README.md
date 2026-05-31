@@ -6,7 +6,7 @@ Built for the [NEAR AI Agents That Act Hackathon](https://github.com/arora13/AdV
 
 ### 🏆 1st Place — Online Track
 
-**Best project from a remote contestant.**
+**Judges voted it the best project from a remote contestant.**
 
 ## Mission
 
