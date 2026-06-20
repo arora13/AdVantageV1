@@ -1,10 +1,12 @@
 ![Marketing team at your fingertips.](docs/hero.png)
 
-Built for the [NEAR AI Agents That Act Hackathon](https://github.com/arora13/AdVantageV1).
+<div align="center">
 
 ### 🏆 1st Place — Online Track
 
 **Voted by judges as the best project from a remote contestant.**
+
+</div>
 
 ---
 
