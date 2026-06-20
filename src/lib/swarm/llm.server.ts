@@ -72,7 +72,6 @@ async function tokenRouterChat(
         { role: "user", content: user },
       ],
       max_tokens: maxTokens,
-      temperature: 0.35,
     }),
     signal: AbortSignal.timeout(120_000),
   });
